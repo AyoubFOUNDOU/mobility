@@ -58,7 +58,6 @@ def prepare_entd_2008(proxies={}):
 
     if data_folder_path.exists() is False:
         os.makedirs(data_folder_path)
-
     # Download the raw survey data from data.gouv.fr if needed
     path = data_folder_path / "entd-2008.zip"
     if path.exists() is False:
@@ -69,11 +68,9 @@ def prepare_entd_2008(proxies={}):
         )
         with open(path, "wb") as file:
             file.write(r.content)
-
         # Unzip the content
         with zipfile.ZipFile(path, "r") as zip_ref:
             zip_ref.extractall(data_folder_path)
-
     # Info about the individuals (CSP, city category...)
     indiv = pd.read_csv(
         data_folder_path / "Q_tcm_individu.csv",
