@@ -8,7 +8,7 @@ import zipfile
 
 def prepare_entd_2008(proxies={}):
     """
-    This function downloads (if needed) the raw survey data from the survey EMP 2019,
+    This function downloads (if needed) the raw survey data from the survey EMP 2008,
     then creates the dataframes needed for trip sampling,
     and then writes these dataframes into parquet files
 
